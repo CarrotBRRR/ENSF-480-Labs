@@ -7,22 +7,47 @@ using namespace std;
 
 // Constructor
 Shape::Shape(const Point& origin, const char* shapeName) : origin(origin) {
-    // Allocate memory for shapeName and copy the provided name
     this->shapeName = new char[strlen(shapeName) + 1];
     strcpy(this->shapeName, shapeName);
 }
 
-// Destructor
-Shape::~Shape() {
-    delete[] shapeName; // Deallocate the dynamically allocated memory for shapeName
+// Copy constructor
+Shape::Shape(const Shape& other) : origin(other.origin) {
+    if (other.shapeName) {
+        shapeName = new char[strlen(other.shapeName) + 1];
+        strcpy(shapeName, other.shapeName);
+    } else {
+        shapeName = nullptr;
+    }
 }
 
-// Getter for origin (reference to a const Point)
+// Assignment operator
+Shape& Shape::operator=(const Shape& other) {
+    if (this != &other) {
+        delete[] shapeName;
+
+        origin = other.origin;
+
+        if (other.shapeName) {
+            shapeName = new char[strlen(other.shapeName) + 1];
+            strcpy(shapeName, other.shapeName);
+        } else {
+            shapeName = nullptr;
+        }
+    }
+    return *this;
+}
+
+// Destructor
+Shape::~Shape() {
+    delete[] shapeName;
+}
+
+// Getters
 const Point& Shape::getOrigin() const {
     return origin;
 }
 
-// Getter for shapeName
 const char* Shape::getName() const {
     return shapeName;
 }
@@ -34,14 +59,14 @@ void Shape::display() const {
     cout << "Y-coordinate: " << origin.getY() << endl;
 }
 
-// Distance function between two shapes
+// Distance function between this shape and another
 double Shape::distance(Shape& other) {
-    return origin.distanceTo(other.getOrigin());
+    return origin.distance(other.getOrigin());
 }
 
-// Static distance function between two shapes
+// Distance function between two shapes
 double Shape::distance(Shape& shape1, Shape& shape2) {
-    return shape1.origin.distanceTo(shape2.origin);
+    return shape1.origin.distance(shape2.origin);
 }
 
 // Move function
