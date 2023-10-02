@@ -3,6 +3,7 @@
 // ENSF 480 - Lab 2 - Exercise A
  
 // Completed by:
+// Nathan Ante & Dominic Choi
 
 #include <assert.h>
 #include <iostream>
