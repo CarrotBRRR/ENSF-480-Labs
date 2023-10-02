@@ -1,3 +1,10 @@
+/*
+* File Name: exC.cpp
+* Assignment: Lab 1 Exercise C
+* Completed by: Dominic Choi 30109955, Nathan Ante 30157706
+* Submission Date: Sept 20, 2023
+*/
+
 #include <string>
 #include <vector>
 using namespace std;

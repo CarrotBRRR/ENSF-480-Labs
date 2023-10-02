@@ -2,6 +2,20 @@
     "files.associations": {
         "iostream": "cpp",
         "array": "cpp",
+<<<<<<< HEAD
+        "bitset": "cpp",
+        "chrono": "cpp",
+        "deque": "cpp",
+        "string": "cpp",
+        "vector": "cpp",
+        "string_view": "cpp",
+        "__bit_reference": "cpp",
+        "functional": "cpp",
+        "iterator": "cpp",
+        "map": "cpp",
+        "memory": "cpp",
+        "unordered_map": "cpp"
+=======
         "atomic": "cpp",
         "bit": "cpp",
         "*.tcc": "cpp",
@@ -45,5 +59,6 @@
         "stdexcept": "cpp",
         "streambuf": "cpp",
         "typeinfo": "cpp"
+>>>>>>> aa0ba3b60eddcc8f75fba474831fdea795d9b0b7
     }
 }

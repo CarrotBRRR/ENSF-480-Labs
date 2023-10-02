@@ -4,7 +4,7 @@
 
 #include <iostream>
 using namespace std;
-#include "mystring.cpp"
+#include "mystring.h"
 
 int main(void)
 {

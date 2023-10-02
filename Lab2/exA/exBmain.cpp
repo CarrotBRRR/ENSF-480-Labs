@@ -19,13 +19,10 @@ void test_operator_overloading(DictionaryList& dl);
 int main()
 {
   DictionaryList dl = dictionary_tests();
- 
-  test_copying();
-    
- // Uncomment the call to test_copying when DictionaryList::copy is properly defined
- // test_finding(dl);
- // test_operator_overloading(dl);
-  
+  // test_copying();
+  // Uncomment the call to test_copying when DictionaryList::copy is properly defined
+  //test_finding(dl);
+  test_operator_overloading(dl);
   return 0;
 }
 
@@ -153,7 +150,7 @@ void test_finding(DictionaryList& dl)
     
     cout << "***----Finished tests of finding -------------------------***\n\n";
 }
-#if 0
+#if 1
 void test_operator_overloading(DictionaryList& dl)
 {
 
@@ -166,9 +163,9 @@ void test_operator_overloading(DictionaryList& dl)
     
     // Needs to overload >= and << (insertion operator) in class Mystring
     if(dl.cursor_datum() >= (dl2.cursor_datum()))
-       cout << endl << dl.cursor_datum() << " is greater than or equal " << dl2.cursor_datum();
+      cout << endl << dl.cursor_datum() << " is greater than or equal " << dl2.cursor_datum();
     else
-       cout << endl << dl2.cursor_datum() << " is greater than " << dl.cursor_datum();
+      cout << endl << dl2.cursor_datum() << " is greater than " << dl.cursor_datum();
     
     // Needs to overload <= for Mystring
     if(dl.cursor_datum() <= (dl2.cursor_datum()))
@@ -186,60 +183,62 @@ void test_operator_overloading(DictionaryList& dl)
         cout << endl << dl.cursor_datum() << " is greater than " << dl2.cursor_datum();
     else
         cout << endl << dl.cursor_datum() << " is not greater than " << dl2.cursor_datum();
-    
+
     if(dl.cursor_datum() < (dl2.cursor_datum()))
         cout << endl << dl.cursor_datum() << " is less than " << dl2.cursor_datum();
     else
         cout << endl << dl.cursor_datum() << " is not less than " << dl2.cursor_datum();
+
     if(dl.cursor_datum() == (dl2.cursor_datum()))
         cout << endl << dl.cursor_datum() << " is equal to " << dl2.cursor_datum();
     else
         cout << endl << dl.cursor_datum() << " is not equal to " << dl2.cursor_datum();
+
    cout << endl << "\nUsing square bracket [] to access elements of Mystring objects. ";
 
     char c = dl.cursor_datum()[1];
     cout << endl << "The socond element of "  << dl.cursor_datum() << " is: " << c;
     
-    dl.cursor_datum()[1] = 'o';
-    c = dl.cursor_datum()[1];
-    cout << endl << "The socond element of "  << dl.cursor_datum() << " is: " << c;
+//     dl.cursor_datum()[1] = 'o';
+//     c = dl.cursor_datum()[1];
+//     cout << endl << "The socond element of "  << dl.cursor_datum() << " is: " << c;
 
-    cout << endl << "\nUsing << to display key/datum pairs in a Dictionary list: \n";
-    /* The following line is expected to display the content of the linked list 
-     * dl2 -- key/datum pairs. It should display:
-     *   8001  Allen
-     *   8002  Peter
-     *   8003  Sam
-     *   8004  PointyHair
-     */
-    cout << dl2;
+//     cout << endl << "\nUsing << to display key/datum pairs in a Dictionary list: \n";
+//     /* The following line is expected to display the content of the linked list 
+//      * dl2 -- key/datum pairs. It should display:
+//      *   8001  Allen
+//      *   8002  Peter
+//      *   8003  Sam
+//      *   8004  PointyHair
+//      */
+//     cout << dl2;
  
-    cout << endl << "\nUsing [] to display the datum only: \n";
-    /* The following line is expected to display the content of the linked list
-     * dl2 -- datum. It should display:
-     *   Allen
-     *   Peter
-     *   Sam
-     *   PointyHair
-     */
+//     cout << endl << "\nUsing [] to display the datum only: \n";
+//     /* The following line is expected to display the content of the linked list
+//      * dl2 -- datum. It should display:
+//      *   Allen
+//      *   Peter
+//      *   Sam
+//      *   PointyHair
+//      */
     
-    for(int i =0; i < dl2.size(); i++)
-        cout << dl2[i] << endl;
+//     for(int i =0; i < dl2.size(); i++)
+//         cout << dl2[i] << endl;
     
-    cout << endl << "\nUsing [] to display sequence of charaters in a datum: \n";
-    /* The following line is expected to display the characters in the first node 
-     * of the dictionary. It should display:
-     *   A
-     *   l
-     *   l
-     *   e
-     *   n
-     */
-    cout << dl2[0][0] << endl;
-    cout << dl2[0][1] << endl;
-    cout << dl2[0][2] << endl;
-    cout << dl2[0][3] << endl;
-    cout << dl2[0][4] << endl;
+//     cout << endl << "\nUsing [] to display sequence of charaters in a datum: \n";
+//     /* The following line is expected to display the characters in the first node 
+//      * of the dictionary. It should display:
+//      *   A
+//      *   l
+//      *   l
+//      *   e
+//      *   n
+//      */
+//     cout << dl2[0][0] << endl;
+//     cout << dl2[0][1] << endl;
+//     cout << dl2[0][2] << endl;
+//     cout << dl2[0][3] << endl;
+//     cout << dl2[0][4] << endl;
     
     cout << "\n\n***----Finished tests for overloading operators ----------***\n\n";
 }
