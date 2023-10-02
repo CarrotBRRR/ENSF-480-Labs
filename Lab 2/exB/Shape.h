@@ -9,6 +9,12 @@ public:
     // Constructor
     Shape(const Point& origin, const char* shapeName);
 
+    // Copy constructor
+    Shape(const Shape& other);
+
+    // Assignment operator
+    Shape& operator=(const Shape& other);
+
     // Destructor
     ~Shape();
 

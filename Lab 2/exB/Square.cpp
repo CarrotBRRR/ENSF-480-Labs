@@ -8,12 +8,32 @@ Square::Square(const Point& origin, double side_a, const char* shapeName): Shape
 Square::Square(double x, double y, double side_a, const char* shapeName): Shape(Point(x, y), shapeName), side_a(side_a) {
 }
 
-// Getter for side_a
+// Copy constructor
+Square::Square(const Square& other) : Shape(other) {
+    // Copy any dynamic resources from 'other' to this object (if any)
+    side_a = other.side_a;
+}
+
+// Assignment operator
+Square& Square::operator=(const Square& other) {
+    if (this != &other) {
+        Shape::operator=(other);
+        side_a = other.side_a;
+    }
+    return *this;
+}
+
+// Destructor
+Square::~Square() {
+    // Nothing to Release
+}
+
+// Getters
 double Square::getSideA() const {
     return side_a;
 }
 
-// Setter for side_a
+// Setters
 void Square::setSideA(double side_a) {
     this->side_a = side_a;
 }

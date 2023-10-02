@@ -11,6 +11,15 @@ public:
     // Overloaded Constructor
     Square(double x, double y, double side_a, const char* shapeName);
 
+    // Copy constructor
+    Square(const Square& other);
+
+    // Assignment operator
+    Square& operator=(const Square& other);
+
+    // Destructor
+    ~Square();
+
     // Getter and Setter for side_a
     double getSideA() const;
     void setSideA(double side_a);

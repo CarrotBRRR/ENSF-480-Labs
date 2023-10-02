@@ -4,12 +4,10 @@
 // Constructor
 Rectangle::Rectangle(const Point& origin, double side_a, double side_b, const char* shapeName)
     : Square(origin, side_a, shapeName), side_b(side_b) {
-    // Additional initialization specific to Rectangle
 }
 
 Rectangle::Rectangle(double x, double y, double side_a, double side_b, const char* shapeName)
     : Square(Point(x,y), side_a, shapeName), side_b(side_b) {
-    // Additional initialization specific to Rectangle
 }
 
 //Copy Constructor
@@ -20,10 +18,8 @@ Rectangle::Rectangle(const Rectangle& other) : Square(other) {
 // Assignment operator
 Rectangle& Rectangle::operator=(const Rectangle& other) {
     if (this != &other) {
-        // Call the base class (Square) assignment operator
         Square::operator=(other);
 
-        // Copy the specific attributes of Rectangle
         side_b = other.side_b;
     }
     return *this;
@@ -34,12 +30,12 @@ Rectangle::~Rectangle() {
     // No dynamic memory to release
 }
 
-// Getter for side_b
+// Getters
 double Rectangle::getSideB() const {
     return side_b;
 }
 
-// Setter for side_b
+// Setters
 void Rectangle::setSideB(double side_b) {
     this->side_b = side_b;
 }
