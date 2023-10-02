@@ -36,12 +36,12 @@ void Shape::display() const {
 
 // Distance function between two shapes
 double Shape::distance(Shape& other) {
-    return origin.distanceTo(other.getOrigin());
+    return origin.distance(other.getOrigin());
 }
 
 // Static distance function between two shapes
 double Shape::distance(Shape& shape1, Shape& shape2) {
-    return shape1.origin.distanceTo(shape2.origin);
+    return shape1.origin.distance(shape2.origin);
 }
 
 // Move function

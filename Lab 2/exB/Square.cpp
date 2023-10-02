@@ -2,8 +2,10 @@
 #include <iostream>
 
 // Constructor
-Square::Square(const Point& origin, const char* shapeName, double side_a) : Shape(origin, shapeName), side_a(side_a) {
-    // Additional initialization specific to Square
+Square::Square(const Point& origin, double side_a, const char* shapeName): Shape(origin, shapeName), side_a(side_a) {
+}
+
+Square::Square(double x, double y, double side_a, const char* shapeName): Shape(Point(x, y), shapeName), side_a(side_a) {
 }
 
 // Getter for side_a

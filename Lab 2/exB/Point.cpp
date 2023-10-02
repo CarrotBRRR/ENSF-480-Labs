@@ -4,10 +4,12 @@
 
 using namespace std;
 
-int Point::n = 1000;
+int Point::num = 1000;
 
-Point::Point(double x, double y) : x(x), y(y) {
-    id = n++;
+Point::Point(double xi, double yi){
+    x = xi;
+    y = yi;
+    id = num++;
 }
 
 void Point::display() const {
@@ -31,7 +33,6 @@ void Point::setY(double y){
     this->y = y;
 }
 
-
 int Point::getId() const {
     return id;
 }
@@ -42,12 +43,12 @@ double Point::distance(const Point& p1, const Point& p2) {
     return sqrt(dx * dx + dy * dy);
 }
 
-double Point::distanceTo(const Point& other) const {
+double Point::distance(const Point& other) const {
     double dx = x - other.x;
     double dy = y - other.y;
     return sqrt(dx * dx + dy * dy);
 }
 
 int Point::counter() {
-    return n - 1000;
+    return num - 1000;
 }

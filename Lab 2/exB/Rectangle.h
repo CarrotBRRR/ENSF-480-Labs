@@ -1,25 +1,36 @@
 #ifndef RECTANGLE_H
 #define RECTANGLE_H
 
-#include "square.h"
+#include "Square.h"
 
 class Rectangle : public Square {
 public:
-    // Constructor
-    Rectangle(const Point& origin, const char* shapeName, double side_a, double side_b);
+    // Constructors
+    Rectangle(const Point& origin, double side_a, double side_b, const char* shapeName);
+
+    Rectangle(double x, double y, double side_a, double side_b, const char* shapeName);
+
+    // Copy constructor
+    Rectangle(const Rectangle& other);
+
+    // Assignment operator
+    Rectangle& operator=(const Rectangle& other);
+
+    // Destructor
+    ~Rectangle();
 
     // Getter and Setter for side_b
     double getSideB() const;
     void setSideB(double side_b);
 
     // Area function
-    double area() const override;
+    double area() const;
 
     // Perimeter function
-    double perimeter() const override;
+    double perimeter() const;
 
     // Display function
-    void display() const override;
+    void display() const;
 
 private:
     double side_b;

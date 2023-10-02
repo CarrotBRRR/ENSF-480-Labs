@@ -6,7 +6,10 @@
 class Square : public Shape {
 public:
     // Constructor
-    Square(const Point& origin, const char* shapeName, double side_a);
+    Square(const Point& origin, double side_a, const char* shapeName);
+
+    // Overloaded Constructor
+    Square(double x, double y, double side_a, const char* shapeName);
 
     // Getter and Setter for side_a
     double getSideA() const;

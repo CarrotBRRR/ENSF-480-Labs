@@ -1,10 +1,37 @@
-#include "rectangle.h"
+#include "Rectangle.h"
 #include <iostream>
 
 // Constructor
-Rectangle::Rectangle(const Point& origin, const char* shapeName, double side_a, double side_b)
-    : Square(origin, shapeName, side_a), side_b(side_b) {
+Rectangle::Rectangle(const Point& origin, double side_a, double side_b, const char* shapeName)
+    : Square(origin, side_a, shapeName), side_b(side_b) {
     // Additional initialization specific to Rectangle
+}
+
+Rectangle::Rectangle(double x, double y, double side_a, double side_b, const char* shapeName)
+    : Square(Point(x,y), side_a, shapeName), side_b(side_b) {
+    // Additional initialization specific to Rectangle
+}
+
+//Copy Constructor
+Rectangle::Rectangle(const Rectangle& other) : Square(other) {
+    side_b = other.side_b;
+}
+
+// Assignment operator
+Rectangle& Rectangle::operator=(const Rectangle& other) {
+    if (this != &other) {
+        // Call the base class (Square) assignment operator
+        Square::operator=(other);
+
+        // Copy the specific attributes of Rectangle
+        side_b = other.side_b;
+    }
+    return *this;
+}
+
+// Destructor
+Rectangle::~Rectangle() {
+    // No dynamic memory to release
 }
 
 // Getter for side_b

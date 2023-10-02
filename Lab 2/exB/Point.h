@@ -20,7 +20,7 @@ public:
     static double distance(const Point& p1, const Point& p2);
 
     // Member function to calculate distance between this point and another point
-    double distanceTo(const Point& other) const;
+    double distance(const Point& other) const;
 
     // Function to get the total count of Point objects
     static int counter();
@@ -29,7 +29,7 @@ private:
     double x;
     double y;
     int id;
-    static int n;
+    static int num;
 };
 
 #endif // POINT_H
