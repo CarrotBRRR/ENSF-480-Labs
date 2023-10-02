@@ -168,26 +168,70 @@ void DictionaryList::make_empty()
 
 void DictionaryList::find(const Key& keyA)
 {
-  cout << "\nDon't know how to find " << keyA << " (or any other key).\n";
-  cout << "... so exit is being called.\n";
-  exit(1);
-}
+  if (headM == 0)
+      return;
+  
+  // Set current node as headM, go through each node and check if keyA == current->keyM
+  // If keyA == current->keyM, then set cursorM as current
+  // If no matching key, set cursorM as 0 and return
+  Node* current = headM;
+  while(current != NULL) {
+    if (current->keyM ==  keyA) {
+      cursorM = current;
+      return;
+    }
+    current = current->nextM;
+  }
+  
+  // Key is not within list
+  cursorM = 0;
+  return;
 
+}
 
 void DictionaryList::destroy()
 {
-  cout << "\nWARNING: DictionaryList::destroy() is abandoning nodes\n"
-       << "when it should be deleting them!\n";
+  if (this->headM == NULL || this->headM->nextM == NULL) {
+    headM = 0;
+    return;
+  }
+
+  while(this->headM->nextM != NULL) {
+    Node* currentLast = this->headM;
+    while (currentLast->nextM->nextM != NULL)
+    {
+      currentLast = currentLast->nextM;
+    }
+    currentLast->nextM = NULL;
+  }
   headM = 0;
 }
 
 
 void DictionaryList::copy(const DictionaryList& source)
 {
-  
-  cout << "\nDictionaryList::copy is not implemented properly,\n"
-       << "so the program is calling exit.\n";
-  exit(1);
+  this->sizeM = 0;
+  this->cursorM = 0;
+  this->headM = 0;
+
+  if (source.headM == 0) {
+    return;
+  }
+
+  this->headM = new Node(source.headM->keyM, source.headM->datumM, this->headM);  
+  this->sizeM++;
+
+  Node* current = this->headM;
+  Node* currentSource = source.headM->nextM;
+  while(currentSource != NULL) {
+    current->nextM = new Node(currentSource->keyM, currentSource->datumM, NULL);
+    current = current->nextM;
+    currentSource = currentSource->nextM;
+    this->sizeM++;
+  }
+
+  this->cursorM = source.cursorM;
+  return;
 }
 
-
+// Overloaded operators

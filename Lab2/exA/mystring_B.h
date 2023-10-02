@@ -82,6 +82,14 @@ public:
   // REQUIRES: s refers to an object of class Mystring
   // PROMISES: retruns true if charsM is not equal s.charsM.
 
+  // overloaded operators
+  friend std::ostream& operator << (std::ostream& os, const Mystring& rhs);
+  bool operator >= (const Mystring& rhs) const;
+  bool operator <= (const Mystring& rhs) const;
+  bool operator != (const Mystring& rhs) const;
+  bool operator > (const Mystring& rhs) const; 
+  bool operator < (const Mystring& rhs) const;
+  bool operator == (const Mystring& rhs) const;
  private:
 
   int lengthM; // the string length - number of characters excluding \0
@@ -90,14 +98,3 @@ public:
   // PROMISES: if s points to NULL terminates the program.
 };
 #endif
-
-
-
-
-
-
-
-
-
-
-

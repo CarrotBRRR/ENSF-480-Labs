@@ -151,13 +151,56 @@ void Mystring::memory_check(char* s)
     }
 }
 
+/* Overloaded operators */
+std::ostream& operator<< (std::ostream& os, const Mystring& S) {
+  os << S.c_str();
+  return os;
+}
 
+bool Mystring::operator>= (const Mystring& S) const {
+  if (this->isGreaterThan(S)==1 || this->isEqual(S)==1) {
+    return true;
+  } else {
+    return false;
+  }
+}
 
+bool Mystring::operator<= (const Mystring& S) const {
+  if (this->isLessThan(S)==1 || this->isEqual(S)==1) {
+    return true;
+  } else {
+    return false;
+  } 
+}
 
+bool Mystring::operator!= (const Mystring& S) const {
+  if (this->isNotEqual(S)==1) {
+    return true;
+  } else {
+    return false;
+  } 
+}
 
+bool Mystring::operator> (const Mystring& S) const {
+  if (this->isGreaterThan(S)==1) {
+    return true;
+  } else {
+    return false;
+  } 
+}
 
+bool Mystring::operator< (const Mystring& S) const {
+  if (this->isLessThan(S)==1) {
+    return true;
+  } else {
+    return false;
+  } 
+}
 
-
-
-
-
+bool Mystring::operator== (const Mystring& S) const {
+  if (this->isEqual(S)==1) {
+    return true;
+  } else {
+    return false;
+  } 
+}

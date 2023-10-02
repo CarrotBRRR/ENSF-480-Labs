@@ -150,14 +150,3 @@ void Mystring::memory_check(char* s)
       exit(1);
     }
 }
-
-
-
-
-
-
-
-
-
-
-

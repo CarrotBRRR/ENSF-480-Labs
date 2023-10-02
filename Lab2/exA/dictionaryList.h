@@ -47,6 +47,7 @@ public:
   DictionaryList(const DictionaryList& source);
   DictionaryList& operator =(const DictionaryList& rhs);
   ~DictionaryList();
+  // overloaded operators
 
   int size() const;
   // PROMISES: Returns number of keys in the table.
