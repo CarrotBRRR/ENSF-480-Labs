@@ -157,6 +157,7 @@ std::ostream& operator<< (std::ostream& os, const Mystring& S) {
   return os;
 }
 
+// Overloading >= operator
 bool Mystring::operator>= (const Mystring& S) const {
   if (this->isGreaterThan(S)==1 || this->isEqual(S)==1) {
     return true;
@@ -165,6 +166,7 @@ bool Mystring::operator>= (const Mystring& S) const {
   }
 }
 
+// Overloading <= operator
 bool Mystring::operator<= (const Mystring& S) const {
   if (this->isLessThan(S)==1 || this->isEqual(S)==1) {
     return true;
@@ -173,6 +175,7 @@ bool Mystring::operator<= (const Mystring& S) const {
   } 
 }
 
+//// Overloading != operator
 bool Mystring::operator!= (const Mystring& S) const {
   if (this->isNotEqual(S)==1) {
     return true;
@@ -181,6 +184,7 @@ bool Mystring::operator!= (const Mystring& S) const {
   } 
 }
 
+// Overloading > operator
 bool Mystring::operator> (const Mystring& S) const {
   if (this->isGreaterThan(S)==1) {
     return true;
@@ -189,6 +193,7 @@ bool Mystring::operator> (const Mystring& S) const {
   } 
 }
 
+// Overloading < operator
 bool Mystring::operator< (const Mystring& S) const {
   if (this->isLessThan(S)==1) {
     return true;
@@ -197,10 +202,20 @@ bool Mystring::operator< (const Mystring& S) const {
   } 
 }
 
+// Overloading == operator
 bool Mystring::operator== (const Mystring& S) const {
   if (this->isEqual(S)==1) {
     return true;
   } else {
     return false;
   } 
+}
+
+// Overloading [] operator
+char& Mystring::operator[](int i) const {
+  if (i >= this->length() || i < 0) {
+    throw std::out_of_range("\nERROR: get_char: the position is out of boundary.");
+  } else {
+    return (charsM[i]);
+  }
 }

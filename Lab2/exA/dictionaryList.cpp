@@ -234,4 +234,78 @@ void DictionaryList::copy(const DictionaryList& source)
   return;
 }
 
-// Overloaded operators
+/*---------------------------------------------------------------------------*/
+// Necessary functions for overloaded operators
+
+// default constructor for node;
+Node::Node() {
+  keyM = 0;
+  datumM = 0;
+  nextM = nullptr;
+}
+
+// getters for node variables
+Key Node::getKey() const{
+  return this->keyM;
+}
+
+Datum Node::getDatum() const{
+  return this->datumM;
+}
+
+Node* Node::getNextNode() const{
+  return this->nextM;
+}
+
+
+/*---------------------------------------------------------------------------*/
+/* Overload operators start here */
+
+// overload [] operator for DictionaryList
+Node DictionaryList::operator[](int i) const {
+  int j = 0;
+  Node* current = this->headM;
+  while((current != NULL) && (j < i)) {
+    current = current->getNextNode();
+    j++;
+  }
+
+  if (current == NULL) {
+    Node* temp = new Node();
+    return (*temp);
+  } else {
+    return *current;
+  }
+}
+
+// overload [] operator for node
+string Node::operator[](int i) const {
+  if (i > this->getDatum().length()-1 || i < 0) {
+    string str = "Index out of bounds";
+    return str;
+  } else {
+    string str(1,this->getDatum().get_char(i));
+    return (str);
+  }
+}
+
+// overload << operator for Node object
+std::ostream& operator<<(std::ostream& os, const Node& rhs) {
+  if (rhs.getKey() == 0 && rhs.getDatum() == 0 && rhs.getNextNode() == nullptr) {
+    os << "Index out of bounds";
+  } else {
+    Datum datumTemp = rhs.getDatum();
+    os << datumTemp;
+  }
+  return os;
+}
+
+// overload << operator for DictionaryList object
+std::ostream& operator<<(std::ostream& os, const DictionaryList& rhs) {
+  Node* current = rhs.headM;
+  while (current != NULL) {
+    os << current->getKey() << "  " << current->getDatum() << endl;
+    current = current->getNextNode();
+  }
+  return os;
+}
