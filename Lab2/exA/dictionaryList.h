@@ -31,12 +31,19 @@ typedef Mystring Datum;
 //    lecture notes.
 
 class Node {
-  friend class DictionaryList;
+public:
+  Key getKey() const;
+  Datum getDatum() const;
+  Node* getNextNode() const;
+  friend std::ostream& operator<<(std::ostream& os, const Node& rhs);
+  string operator[](int i) const;
+  Node();
 private:
   Key keyM;
   Datum datumM;
   Node *nextM;
 
+  friend class DictionaryList;
   // This ctor should be convenient in insert and copy operations.
   Node(const Key& keyA, const Datum& datumA, Node *nextA);
 };
@@ -47,7 +54,6 @@ public:
   DictionaryList(const DictionaryList& source);
   DictionaryList& operator =(const DictionaryList& rhs);
   ~DictionaryList();
-  // overloaded operators
 
   int size() const;
   // PROMISES: Returns number of keys in the table.
@@ -100,6 +106,10 @@ public:
 
   void make_empty();
   // PROMISES: size() == 0.
+
+  // Overloaded operators
+  friend std::ostream& operator<<(std::ostream& os, const DictionaryList& rhs);
+  Node operator[] (int i) const;
 
 private:
   int sizeM;

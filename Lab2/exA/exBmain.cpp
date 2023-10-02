@@ -197,49 +197,48 @@ void test_operator_overloading(DictionaryList& dl)
    cout << endl << "\nUsing square bracket [] to access elements of Mystring objects. ";
 
     char c = dl.cursor_datum()[1];
+    cout << endl << "The second element of "  << dl.cursor_datum() << " is: " << c;
+    
+    dl.cursor_datum()[1] = 'o';
+    c = dl.cursor_datum()[1];
     cout << endl << "The socond element of "  << dl.cursor_datum() << " is: " << c;
-    
-//     dl.cursor_datum()[1] = 'o';
-//     c = dl.cursor_datum()[1];
-//     cout << endl << "The socond element of "  << dl.cursor_datum() << " is: " << c;
 
-//     cout << endl << "\nUsing << to display key/datum pairs in a Dictionary list: \n";
-//     /* The following line is expected to display the content of the linked list 
-//      * dl2 -- key/datum pairs. It should display:
-//      *   8001  Allen
-//      *   8002  Peter
-//      *   8003  Sam
-//      *   8004  PointyHair
-//      */
-//     cout << dl2;
+    cout << endl << "\nUsing << to display key/datum pairs in a Dictionary list: \n";
+    /* The following line is expected to display the content of the linked list 
+     * dl2 -- key/datum pairs. It should display:
+     *   8001  Allen
+     *   8002  Peter
+     *   8003  Samcl
+     *   8004  PointyHair
+     */
+    cout << dl2;
  
-//     cout << endl << "\nUsing [] to display the datum only: \n";
-//     /* The following line is expected to display the content of the linked list
-//      * dl2 -- datum. It should display:
-//      *   Allen
-//      *   Peter
-//      *   Sam
-//      *   PointyHair
-//      */
+    cout << endl << "\nUsing [] to display the datum only: \n";
+    /* The following line is expected to display the content of the linked list
+     * dl2 -- datum. It should display:
+     *   Allen
+     *   Peter
+     *   Sam
+     *   PointyHair
+     */
     
-//     for(int i =0; i < dl2.size(); i++)
-//         cout << dl2[i] << endl;
+    for(int i =0; i < dl2.size(); i++)
+        cout << dl2[i] << endl;
     
-//     cout << endl << "\nUsing [] to display sequence of charaters in a datum: \n";
-//     /* The following line is expected to display the characters in the first node 
-//      * of the dictionary. It should display:
-//      *   A
-//      *   l
-//      *   l
-//      *   e
-//      *   n
-//      */
-//     cout << dl2[0][0] << endl;
-//     cout << dl2[0][1] << endl;
-//     cout << dl2[0][2] << endl;
-//     cout << dl2[0][3] << endl;
-//     cout << dl2[0][4] << endl;
-    
+    cout << endl << "\nUsing [] to display sequence of charaters in a datum: \n";
+    /* The following line is expected to display the characters in the first node 
+     * of the dictionary. It should display:
+     *   A
+     *   l
+     *   l
+     *   e
+     *   n
+     */
+    cout << dl2[0][0] << endl;
+    cout << dl2[0][1] << endl;
+    cout << dl2[0][2] << endl;
+    cout << dl2[0][3] << endl;
+    cout << dl2[0][4] << endl;
     cout << "\n\n***----Finished tests for overloading operators ----------***\n\n";
 }
 #endif

@@ -90,6 +90,8 @@ public:
   bool operator > (const Mystring& rhs) const; 
   bool operator < (const Mystring& rhs) const;
   bool operator == (const Mystring& rhs) const;
+
+  char& operator[](int i) const;
  private:
 
   int lengthM; // the string length - number of characters excluding \0
