@@ -25,7 +25,10 @@ public:
     const char* getName() const;
 
     // Display function
-    void display() const;
+    virtual void display() const;
+
+    virtual double area() const = 0;
+    virtual double perimeter() const = 0;
 
     // Distance function between two shapes
     double distance(Shape& other);

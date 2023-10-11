@@ -4,16 +4,16 @@
 // Constructor
 Rectangle::Rectangle(const Point& origin, double side_a, double side_b, 
                     const char* shapeName)
-    : Square(origin, side_a, shapeName), side_b(side_b) {
+    : Square(origin, side_a, shapeName), side_b(side_b), Shape(origin, shapeName) {
 }
 
 Rectangle::Rectangle(double x, double y, double side_a, double side_b, 
                     const char* shapeName)
-    : Square(Point(x,y), side_a, shapeName), side_b(side_b) {
+    : Square(Point(x,y), side_a, shapeName), side_b(side_b), Shape(Point(x,y), shapeName) {
 }
 
 //Copy Constructor
-Rectangle::Rectangle(const Rectangle& other) : Square(other) {
+Rectangle::Rectangle(const Rectangle& other) : Square(other), Shape(other){
     side_b = other.side_b;
 }
 
@@ -51,6 +51,7 @@ double Rectangle::area() const {
 double Rectangle::perimeter() const {
     return 2 * (side_a + side_b);
 }
+
 
 // Display function
 void Rectangle::display() const {

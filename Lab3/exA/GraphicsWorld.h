@@ -5,6 +5,8 @@
 #include "Shape.cpp"
 #include "Square.cpp"
 #include "Rectangle.cpp"
+#include "Circle.cpp"
+#include "CurveCut.cpp"
 
 class GraphicsWorld {
 public:
