@@ -89,7 +89,7 @@ void GraphicsWorld::run() {
 #endif // end of block to test an array of pointers and polymorphism
 
 #if 1
-    cout << "---------------------------------------------" << endl;
+    cout << "\n------------------------ Start of Lab 3 ------------------------" << endl;
     cout << "\nTesting Functions in class Circle:" << endl; 
     Circle c (3, 5, 9, "CIRCLE C"); 
     c.display(); 
