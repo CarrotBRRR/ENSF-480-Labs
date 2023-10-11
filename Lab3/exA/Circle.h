@@ -1,9 +1,11 @@
 #ifndef CIRCLE_H
 #define CIRCLE_H
 
+#define M_PI 3.14159265358979323846
+
 #include "Shape.h"
 
-class Circle : public Shape {
+class Circle : public virtual Shape {
 private:
     double radius;
 
