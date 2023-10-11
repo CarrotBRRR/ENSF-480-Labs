@@ -4,6 +4,7 @@
 
 #ifndef MYSTRING_H
 #define MYSTRING_H
+#include <ostream>
 
 class Mystring {
  public:
@@ -59,6 +60,10 @@ class Mystring {
   // PROMISES:copys s into charsM, if the length of s is less than or equal lengthM.
   //          Othrewise, extends the size of the charsM to s.lengthM+1, and copies 
   //          s into the charsM.
+
+  // 
+  friend std::ostream& operator << (std::ostream& os, const Mystring& rhs);
+  int operator > (const Mystring& rhs) const; 
 
  private:
 

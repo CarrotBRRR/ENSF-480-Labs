@@ -104,3 +104,15 @@ Mystring& Mystring::append(const Mystring& other)
 
     strcpy(charsM, s);
 }
+
+/*------------------*-----------------------*/
+std::ostream& operator<< (std::ostream& os, const Mystring& S) {
+  os << S.c_str();
+  return os;
+}
+
+
+int Mystring::operator> (const Mystring& S) const {
+  return (strcmp(charsM, S.charsM) > 0);
+}
+
