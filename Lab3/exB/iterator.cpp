@@ -22,7 +22,7 @@ public:
     VectIter(Vector& x);
  
     T operator++();
-    //PROMISES: increments the iterator's indes and return the 
+    //PROMISES: increments the iterator's index and return the 
     //          value of the element at the index position. If
     //          index exceeds the size of the array it will 
     //          be set to zero. Which means it will be circulated
@@ -136,11 +136,12 @@ T Vector<T>::VectIter::operator++() {
 
 template <class T>
 T Vector<T>::VectIter::operator++(int a) {
-  T returnVal = v->array[a];
-
+  T returnVal = v->array[index + a];
+  
   if (++index > v->size - 1) {
     index = 0;
   }
+
   return returnVal;
 }
 
@@ -154,7 +155,7 @@ T Vector<T>::VectIter::operator--() {
 
 template <class T>
 T Vector<T>::VectIter::operator--(int a) {
-  T returnVal = v->array[a];
+  T returnVal = v->array[index + a];
   if (--index < 0) {
     index = v->size - 1;
   }
