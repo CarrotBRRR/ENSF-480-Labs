@@ -1,4 +1,4 @@
-#include "graphicsWorld.cpp"
+#include "GraphicsWorld.cpp"
 
 int main(){
     GraphicsWorld world;
