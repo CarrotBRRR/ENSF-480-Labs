@@ -1,4 +1,4 @@
-#include "graphicsWorld.h"
+#include "GraphicsWorld.h"
 #include <iostream>
 
 void GraphicsWorld::run() {
