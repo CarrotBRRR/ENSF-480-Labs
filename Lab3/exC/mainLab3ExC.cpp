@@ -25,11 +25,11 @@ int main()
 {
 
  //create and test a lookup table with an integer key value and Customer datum
- //test_Customer();
+ test_Customer();
     
  // Uncomment the following function calls when ready to test template class LookupTable
  // create and test a a lookup table of type <int, String>
- //test_String();
+ test_String();
 
  // Uncomment the following function calls when ready to test template class LookupTable
  // create and test a a lookup table of type <int, int>
@@ -63,63 +63,63 @@ void try_to_find(LookupTable<KeyType, DatumType>& lt, KeyType key)
 void test_Customer()
   //creating a lookup table for customer objects.
   {
-    // cout<<"\nCreating and testing Customers Lookup Table <not template>-...\n";
-    // LookupTable lt;
+    cout<<"\nCreating and testing Customers Lookup Table <not template>-...\n";
+    LookupTable<int, Customer> lt;
     
-    // // Insert using new keys.
-    // Customer a("Joe", "Morrison", "11 St. Calgary.", "(403)-1111-123333");
-    // Customer b("Jack", "Lewis", "12 St. Calgary.", "(403)-1111-123334");
-    // Customer c("Tim", "Hardy", "13 St. Calgary.", "(403)-1111-123335");
-    // lt.insert(Pair (8002, a));
-    // lt.insert(Pair (8004, c));
-    // lt.insert(Pair (8001, b));
+    // Insert using new keys.
+    Customer a("Joe", "Morrison", "11 St. Calgary.", "(403)-1111-123333");
+    Customer b("Jack", "Lewis", "12 St. Calgary.", "(403)-1111-123334");
+    Customer c("Tim", "Hardy", "13 St. Calgary.", "(403)-1111-123335");
+    lt.insert(Pair<int, Customer> (8002, a));
+    lt.insert(Pair<int, Customer> (8004, c));
+    lt.insert(Pair<int, Customer> (8001, b));
  
-    // assert(lt.size() == 3);
-    // lt.remove(8004);
-    // assert(lt.size() == 2);
-    // cout << "\nPrinting table after inserting 3 new keys and 1 removal...\n";
-    // print(lt);
+    assert(lt.size() == 3);
+    lt.remove(8004);
+    assert(lt.size() == 2);
+    cout << "\nPrinting table after inserting 3 new keys and 1 removal...\n";
+    print(lt);
     
-    // // Pretend that a user is trying to look up customers info.
+    // Pretend that a user is trying to look up customers info.
   
-    // cout << "\nLet's look up some names ...\n";
-    // try_to_find(lt, 8001);
-    // try_to_find(lt, 8000);
+    cout << "\nLet's look up some names ...\n";
+    try_to_find(lt, 8001);
+    try_to_find(lt, 8000);
 
-    // // test Iterator
-    // cout << "\nTesing and using  iterator ...\n";
-    // LookupTable::Iterator it = lt.begin();
-    // cout <<"\nThe first node contains: " <<*it <<endl;
+    // test Iterator
+    cout << "\nTesing and using  iterator ...\n";
+    LookupTable<int, Customer>::Iterator it = lt.begin();
+    cout <<"\nThe first node contains: " <<*it <<endl;
 
-    // while (!it) {
-    //   cout <<++it << endl;
-    // }    
+    while (!it) {
+      cout <<++it << endl;
+    }    
 
-    // //test copying
-    // lt.go_to_first();
-    // lt.step_fwd();
-    // LookupTable clt(lt);
-    // assert(strcmp(clt.cursor_datum().getFname(),"Joe")==0);
+    //test copying
+    lt.go_to_first();
+    lt.step_fwd();
+    LookupTable<int, Customer> clt(lt);
+    assert(strcmp(clt.cursor_datum().getFname(),"Joe")==0);
 
-    // cout << "\nTest copying: keys should be 8001, and 8002\n";
-    // print(clt);
-    // lt.remove(8002);
+    cout << "\nTest copying: keys should be 8001, and 8002\n";
+    print(clt);
+    lt.remove(8002);
  
-    // //Assignment operator check.
-    // clt= lt;
+    //Assignment operator check.
+    clt= lt;
   
-    // cout << "\nTest assignment operator: key should be 8001\n";
-    // print(clt);
+    cout << "\nTest assignment operator: key should be 8001\n";
+    print(clt);
 
-    // //Wipe out the entries in the table.
-    // lt.make_empty();
-    // cout << "\nPrinting table for the last time: Table should be empty...\n";
-    // print(lt);
+    //Wipe out the entries in the table.
+    lt.make_empty();
+    cout << "\nPrinting table for the last time: Table should be empty...\n";
+    print(lt);
     
 
-    // cout << "***----Finished tests on Customers Lookup Table <not template>-----***\n";
-    // cout << "PRESS RETURN TO CONTINUE.";
-    // cin.get();
+    cout << "***----Finished tests on Customers Lookup Table <not template>-----***\n";
+    cout << "PRESS RETURN TO CONTINUE.";
+    cin.get();
     
   }
 
@@ -164,7 +164,8 @@ void test_String()
     //test copying
     lt.go_to_first();
     lt.step_fwd();
-    LookupTable  clt(lt);
+    
+    LookupTable<int, Mystring> clt(lt);
     assert(strcmp(clt.cursor_datum().c_str(),"I am an ENEL-409 student.")==0);
 
     cout << "\nTest copying: keys should be 8001, and 8002\n";
@@ -227,7 +228,7 @@ void test_integer()
     //test copying
     lt.go_to_first();
     lt.step_fwd();
-    LookupTable clt(lt);
+    LookupTable<int, int> clt(lt);
     assert(clt.cursor_datum()== 9999);
 
     cout << "\nTest copying: keys should be 8001, and 8002\n";
