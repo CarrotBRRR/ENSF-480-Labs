@@ -129,7 +129,8 @@ class LookupTable {
   void make_empty();
   // PROMISES: size() == 0.
 
-  friend ostream& operator << (ostream& os, const LookupTable<KeyType, DatumType>& lt);
+  template<class KeyTypefriend, class DatumTypefriend>
+  friend ostream& operator << (ostream& os, const LookupTable<KeyTypefriend, DatumTypefriend>& lt);
 
  private:
   int sizeM;
