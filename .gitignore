@@ -33,4 +33,5 @@
 
 # Folders to ignore
 __MACOSX/
+.vscode/
 
