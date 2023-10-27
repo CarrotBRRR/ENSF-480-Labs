@@ -2,6 +2,9 @@
  */
 
 import java.util.Random;
+
+import lab5package.*;
+
 public class DemoStrategyPattern {
 	public static void main(String[] args) {
 		// Create an object of MyVector<Double> with capacity of 50 elements
