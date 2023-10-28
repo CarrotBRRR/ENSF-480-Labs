@@ -1,4 +1,4 @@
-package ExerciseC;
+package exCpackage;
 
 public class ObserverPatternController {
  	public static void main(String []s) {
