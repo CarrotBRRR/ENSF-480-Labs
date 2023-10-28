@@ -26,7 +26,7 @@ public class DemoStrategyPattern {
 	    // displaying original data in MyVector v1
        System.out.println("The original values in v1 object are:");
 		v1.display();
-
+       System.out.println("The original values in v3 object are:");
 		v3.display();
 		
 		// choose algorithm bubble sort as a strategy to sort object v1
@@ -41,7 +41,7 @@ public class DemoStrategyPattern {
 		
         System.out.println("\nThe values in MyVector object v1 after performing BoubleSorter is:");
 		v1.display();
-		
+        System.out.println("\nThe values in MyVector object v3 after performing SelectionSorter is:");
 		v3.display();
 		
 		// create a MyVector<Integer> object V2 
