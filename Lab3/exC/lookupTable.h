@@ -24,7 +24,8 @@ using namespace std;
 
 typedef int KeyType; 
 typedef Customer DatumType;
-template<class KeyType, class DatumType> class LookupTable;
+template<class KeyType, class DatumType> 
+class LookupTable;
 
 template<class KeyType, class DatumType>
 struct Pair 
@@ -55,8 +56,8 @@ class LookupTable {
   // Nested class
   class Iterator {
     friend class LookupTable;
-    LookupTable *LT;
-// LT_Node<KeyType, DatumType>* cursor;
+    LookupTable<KeyType,DatumType> *LT;
+    LT_Node<KeyType, DatumType>* cursor;
     
   public:
     Iterator():LT(0){}
