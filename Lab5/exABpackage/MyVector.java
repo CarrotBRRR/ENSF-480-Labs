@@ -1,4 +1,4 @@
-package lab5package;
+package exABpackage;
 import java.util.ArrayList;
 
 public class MyVector<E extends Number & Comparable<E>> {

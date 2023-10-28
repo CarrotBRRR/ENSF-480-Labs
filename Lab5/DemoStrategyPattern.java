@@ -3,7 +3,7 @@
 
 import java.util.Random;
 
-import lab5package.*;
+import exABpackage.*;
 
 public class DemoStrategyPattern {
 	public static void main(String[] args) {
