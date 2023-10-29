@@ -1,4 +1,4 @@
-package exCpackage;
+import exCpackage.*;
 
 public class ObserverPatternController {
  	public static void main(String []s) {
