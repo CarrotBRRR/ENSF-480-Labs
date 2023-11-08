@@ -35,3 +35,5 @@
 __MACOSX/
 .vscode/
 
+# others
+tempCodeRunnerFile.java
